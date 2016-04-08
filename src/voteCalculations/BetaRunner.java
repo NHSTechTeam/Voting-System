@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class BetaRunner {
 
 	public static void main(String[] args) {
-		
+
 		Manager manage = new Manager();
 		ArrayList<Candidate> list = new ArrayList<Candidate>();
 		list.add(new Candidate("Bob"));
@@ -14,7 +14,7 @@ public class BetaRunner {
 		list.add(new Candidate("Lary"));
 		list.add(new Candidate("Susan"));
 		list.add(new Candidate("Jimbo"));
-		
+
 		manage.setCandidates(list);
 		int[] n1 = new int[6];
 		n1[1] = 3;
@@ -53,7 +53,6 @@ public class BetaRunner {
 		manage.addVoter(n1);
 		manage.addVoter(n1);
 		System.out.println("The winner is " + manage.calculateWinner().getName());
-		
 
 	}
 
