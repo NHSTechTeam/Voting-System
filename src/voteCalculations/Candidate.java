@@ -1,32 +1,32 @@
 package voteCalculations;
 
 public class Candidate {
-	// variables
-	private String name;
-	private int votes;
+    // variables
+    private String name;
+    private int votes;
 
-	public Candidate(String word) {
-		name = word;
-		votes = 0;
-	}
+    public Candidate(String word) {
+        name = word;
+        votes = 0;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void addVote() {
-		votes++;
-	}
+    public void addVote() {
+        votes++;
+    }
 
-	public int getVotes() {
-		return votes;
-	}
+    public int getVotes() {
+        return votes;
+    }
 
-	public void resetVotes() {
-		votes = 0;
-	}
+    public void resetVotes() {
+        votes = 0;
+    }
 
-	public String toString() {
-		return name + votes;
-	}
+    public String toString() {
+        return name + votes;
+    }
 }
