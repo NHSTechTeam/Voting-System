@@ -15,6 +15,7 @@ public class InterfaceAid {
 		window.setMinWidth(size);
 		window.setMinHeight(size);
 		window.setOnCloseRequest(e -> window.close());
+		window.setMaximized(true);
 		mainScene.getStylesheets().add("style.css");
 	}
 }

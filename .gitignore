@@ -2,3 +2,11 @@
 
 .classpath
 .project
+.idea/compiler.xml
+Voting-System.iml
+Voting-System.eml
+.idea/workspace.xml
+.idea/vcs.xml
+.idea/modules.xml
+.idea/misc.xml
+.idea/copyright/profiles_settings.xml

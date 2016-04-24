@@ -71,21 +71,31 @@ public class Main extends Application {
 	public static void vote() {
 		Stage window = new Stage();
 		window.setMaximized(true);
-		VBox boothLayout = new VBox(10);
-		Scene booth = new Scene(boothLayout, 250, 250);
+		VBox boothLayout = new VBox(10), confirmLayout = new VBox(10);
+		Scene booth = new Scene(boothLayout, 250, 250), confirm = new Scene(confirmLayout, 100, 100);
 		int[] votes = new int[list.size()];
 		Label votesRemaining = new Label("Voter Number:" + "\n" + n);
 
-		Button finish = new Button("Finish Election");
+		Button finish = new Button("Finish Election"), confirmFinish = new Button("Confirm End"), back = new Button("Back to voting");
 		finish.setMinSize(250, 75);
 		finish.setOnAction(e -> {
+			window.setScene(confirm);
+			window.setMaximized(true);
+		});
+		confirmFinish.setOnAction(e -> {
+			window.setMaximized(true);
 			done = true;
 			window.close();
-
 		});
-
+		back.setOnAction(e -> {
+			window.setMaximized(true);
+			window.setScene(booth);
+			window.setMaximized(true);
+		});
+		
 		InterfaceAid.windowBasic(window, "Voting Booth", 700, booth);
-
+		InterfaceAid.windowBasic(window, "Voting Booth", 700, confirm);
+		
 		HBox options = new HBox();
 
 		i = 0;
@@ -125,6 +135,10 @@ public class Main extends Application {
 		boothLayout.getChildren().addAll(votesRemaining, options, finish);
 		boothLayout.setAlignment(Pos.CENTER);
 		boothLayout.setSpacing(50.0);
+		
+		confirmLayout.getChildren().addAll(back, confirmFinish);
+		confirmLayout.setAlignment(Pos.CENTER);
+		confirmLayout.setSpacing(50.0);
 
 		// Display window and wait for it to be closed before returning
 		window.setScene(booth);
