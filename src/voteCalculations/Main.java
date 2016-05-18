@@ -35,7 +35,7 @@ public class Main extends Application {
         int[] votes = new int[list.size()];
         Label votesRemaining = new Label("Voter Number:" + "\n" + n);
 
-        Button finish = new Button("Finish Election"), confirmFinish = new Button("Confirm End"), back = new Button("Back to voting");
+        Button finish = new Button("Finish Election"), confirmFinish = new Button("Confirm End"), back = new Button("Back to voting"), undo = new Button("Undo");
         finish.setMinSize(250, 75);
         finish.setOnAction(e -> {
             window.setScene(confirm);
@@ -84,6 +84,10 @@ public class Main extends Application {
                         window.close();
                     }
                 }
+                undo.setOnAction(r -> {
+                    options.getChildren().get(hashValue(e.getSource().hashCode())).setVisible(true);
+                    pick--;
+                });
             });
         }
 
@@ -91,7 +95,7 @@ public class Main extends Application {
         options.setSpacing(10);
         options.setAlignment(Pos.CENTER);
 
-        boothLayout.getChildren().addAll(votesRemaining, options, finish);
+        boothLayout.getChildren().addAll(votesRemaining, options, undo, finish);
         boothLayout.setAlignment(Pos.CENTER);
         boothLayout.setSpacing(50.0);
 
