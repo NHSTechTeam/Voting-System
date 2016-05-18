@@ -10,6 +10,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
@@ -132,6 +133,7 @@ public class Main extends Application {
         window.setTitle("Fair Voting System");
         TableView<Candidate> table;
         Label winner = new Label("");
+        winner.setFont(new Font("Cambria", 30));
 
         Button start = new Button("Start Election");
         start.setMinSize(250, 75);
