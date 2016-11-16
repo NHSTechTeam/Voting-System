@@ -5,20 +5,20 @@ import java.util.ArrayList;
 /**
  * @author James
  */
-public class Voter {
+class Voter {
     // variables
-    private ArrayList<Candidate> choice = new ArrayList<Candidate>();
-    private int[] pref;
+    private final ArrayList<Candidate> choice = new ArrayList<>();
+    private final int[] pref;
 
     public Voter(int[] num, ArrayList<Candidate> list) {
         pref = num;
         setCandidate(list);
     }
 
-    public void setCandidate(ArrayList<Candidate> list) {
-        for (int i = 0; i < pref.length; i++) {
-            System.out.println(list.get(pref[i]).getName());
-            choice.add(list.get(pref[i]));
+    private void setCandidate(ArrayList<Candidate> list) {
+        for (int aPref : pref) {
+            System.out.println(list.get(aPref).getName());
+            choice.add(list.get(aPref));
         }
     }
 

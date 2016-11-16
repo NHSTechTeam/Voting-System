@@ -4,12 +4,12 @@ import javafx.scene.Scene;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class InterfaceAid {
-    public static void windowBasic(Stage window, String title, int size, Scene mainScene) {
+class InterfaceAid {
+    public static void windowBasic(Stage window, Scene mainScene) {
         window.initModality(Modality.APPLICATION_MODAL);
-        window.setTitle(title);
-        window.setMinWidth(size);
-        window.setMinHeight(size);
+        window.setTitle("Voting Booth");
+        window.setMinWidth(700);
+        window.setMinHeight(700);
         window.setOnCloseRequest(e -> window.close());
         window.setMaximized(true);
         mainScene.getStylesheets().add("style.css");

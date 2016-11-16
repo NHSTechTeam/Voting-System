@@ -2,7 +2,7 @@ package voteCalculations;
 
 public class Candidate {
     // variables
-    private String name;
+    private final String name;
     private int votes;
 
     public Candidate(String word) {

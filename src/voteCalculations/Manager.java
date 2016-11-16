@@ -2,12 +2,11 @@ package voteCalculations;
 
 import java.util.ArrayList;
 
-public class Manager {
+class Manager {
     // variables
-    private ArrayList<Candidate> options = new ArrayList<Candidate>();
-    private ArrayList<Candidate> possible = new ArrayList<Candidate>();
-    private ArrayList<Voter> voter = new ArrayList<Voter>();
-    private int indexP, indexO;
+    private ArrayList<Candidate> options = new ArrayList<>();
+    private ArrayList<Candidate> possible = new ArrayList<>();
+    private final ArrayList<Voter> voter = new ArrayList<>();
 
     public Manager() {
 
@@ -44,8 +43,8 @@ public class Manager {
         int rep = possible.size() - 1;
         for (int e = 0; e < rep; e++) {
             lose = 0;
-            for (int i = 0; i < voter.size(); i++) {
-                voter.get(i).getChoice().get(0).addVote();
+            for (Voter aVoter : voter) {
+                aVoter.getChoice().get(0).addVote();
             }
 
             for (int i = 1; i < possible.size(); i++) {
@@ -56,8 +55,8 @@ public class Manager {
                 System.out.println(lose);
                 System.out.println(possible.get(lose));
             }
-            for (int i = 0; i < voter.size(); i++) {
-                voter.get(i).removeLoser(possible.get(lose));
+            for (Voter aVoter : voter) {
+                aVoter.removeLoser(possible.get(lose));
             }
             if ((possible.size() == 2) && (possible.get(0).getVotes() == possible.get(1).getVotes())) {
                 tie = true;
@@ -66,8 +65,8 @@ public class Manager {
             possible.remove(lose);
             System.out.println("Current 0 = " + possible.get(0));
 
-            for (int i = 0; i < options.size(); i++) {
-                options.get(i).resetVotes();
+            for (Candidate option : options) {
+                option.resetVotes();
             }
 
         }
